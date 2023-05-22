@@ -1,0 +1,129 @@
+\hypertarget{count__goal_8cpp}{}\doxysection{src/count\+\_\+goal.cpp File Reference}
+\label{count__goal_8cpp}\index{src/count\_goal.cpp@{src/count\_goal.cpp}}
+
+
+Counting goals for the Gazebo robot.  
+
+
+{\ttfamily \#include \char`\"{}following\+\_\+goal/\+Number\+Goals.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}assignment\+\_\+2\+\_\+2022/\+Planning\+Action\+Result.\+h\char`\"{}}\newline
+Include dependency graph for count\+\_\+goal.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{count__goal_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{count__goal_8cpp_a4760d3ffface202325da04b0c38c524b}{goal\+\_\+service}} (following\+\_\+goal\+::\+Number\+Goals\+::\+Request \&req, following\+\_\+goal\+::\+Number\+Goals\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em a service callback \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{count__goal_8cpp_a4900b53eca4fb2914de84d338cd3fb0c}{count\+\_\+reach\+\_\+canc\+\_\+\+Callback}} (const assignment\+\_\+2\+\_\+2022\+::\+Planning\+Action\+Result\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em a subscription callback \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{count__goal_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em the main function, that manages everything \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{count__goal_8cpp_abe9e64ff92b4c5d6588ab16a3f381235}\label{count__goal_8cpp_abe9e64ff92b4c5d6588ab16a3f381235}} 
+int \mbox{\hyperlink{count__goal_8cpp_abe9e64ff92b4c5d6588ab16a3f381235}{reached}} =0
+\begin{DoxyCompactList}\small\item\em A variable for number of reached goal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{count__goal_8cpp_a9d8a28996061a594e8cb11a5444f34fe}\label{count__goal_8cpp_a9d8a28996061a594e8cb11a5444f34fe}} 
+int \mbox{\hyperlink{count__goal_8cpp_a9d8a28996061a594e8cb11a5444f34fe}{eliminated}} =0
+\begin{DoxyCompactList}\small\item\em A variable for number of deleted goal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{count__goal_8cpp_a6e27f49150e9a14580fb313cc2777e00}\label{count__goal_8cpp_a6e27f49150e9a14580fb313cc2777e00}} 
+int \mbox{\hyperlink{count__goal_8cpp_a6e27f49150e9a14580fb313cc2777e00}{status}}
+\begin{DoxyCompactList}\small\item\em A variable for the status of the goal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Counting goals for the Gazebo robot. 
+
+\begin{DoxyAuthor}{Author}
+Simone Borelli 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+03/03/2023
+\end{DoxyDate}
+Subscribes to \+: ~\newline
+ /reaching\+\_\+goal/result
+
+Publishes to \+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Service \+: ~\newline
+ /result
+
+Custom service \+: ~\newline
+ Number\+Goals
+
+Description \+:
+
+This is a service node, that manages the information about number of goals reached by the robot and cancelled by the user. It interacts with Number\+Goals, that is a custom service. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{count__goal_8cpp_a4900b53eca4fb2914de84d338cd3fb0c}\label{count__goal_8cpp_a4900b53eca4fb2914de84d338cd3fb0c}} 
+\index{count\_goal.cpp@{count\_goal.cpp}!count\_reach\_canc\_Callback@{count\_reach\_canc\_Callback}}
+\index{count\_reach\_canc\_Callback@{count\_reach\_canc\_Callback}!count\_goal.cpp@{count\_goal.cpp}}
+\doxysubsubsection{\texorpdfstring{count\_reach\_canc\_Callback()}{count\_reach\_canc\_Callback()}}
+{\footnotesize\ttfamily void count\+\_\+reach\+\_\+canc\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{const assignment\+\_\+2\+\_\+2022\+::\+Planning\+Action\+Result\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+a subscription callback 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & define the type of message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing, because it is a void function
+\end{DoxyReturn}
+This is a callback, that prints the status of the goal, and checks its value \+: if it is 3, increment by one the variable reached, whereas if it is 2, increment by one the variable eliminated. \mbox{\Hypertarget{count__goal_8cpp_a4760d3ffface202325da04b0c38c524b}\label{count__goal_8cpp_a4760d3ffface202325da04b0c38c524b}} 
+\index{count\_goal.cpp@{count\_goal.cpp}!goal\_service@{goal\_service}}
+\index{goal\_service@{goal\_service}!count\_goal.cpp@{count\_goal.cpp}}
+\doxysubsubsection{\texorpdfstring{goal\_service()}{goal\_service()}}
+{\footnotesize\ttfamily bool goal\+\_\+service (\begin{DoxyParamCaption}\item[{following\+\_\+goal\+::\+Number\+Goals\+::\+Request \&}]{req,  }\item[{following\+\_\+goal\+::\+Number\+Goals\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+a service callback 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & defines the request to Number\+Goals custom service \\
+\hline
+{\em res} & defines the reponse of N\+Umber\+Goals custom service\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+always true, as a convention of service callback
+\end{DoxyReturn}
+This callback assigns the values of variables reached and eliminated to the response part of custom service \mbox{\Hypertarget{count__goal_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{count__goal_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{count\_goal.cpp@{count\_goal.cpp}!main@{main}}
+\index{main@{main}!count\_goal.cpp@{count\_goal.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+the main function, that manages everything 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & is the number of arguments, provided by argv \\
+\hline
+{\em argv} & containes the arguments, passed by comand line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number 0 as a convention of any main function in C++
+\end{DoxyReturn}
+The main function uses the callback count\+\_\+reach\+\_\+canc\+\_\+\+Callback, for subscribing the status of the goal from the topic reaching\+\_\+goal/result, and uses the callback goal\+\_\+service, for sending the information about numbers of reached and deleted goal to /result. 

@@ -1,0 +1,111 @@
+\hypertarget{publisher_8cpp}{}\doxysection{src/publisher.cpp File Reference}
+\label{publisher_8cpp}\index{src/publisher.cpp@{src/publisher.cpp}}
+
+
+Publishing robot position and velocity.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}nav\+\_\+msgs/\+Odometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}following\+\_\+goal/\+Robot\+\_\+pv.\+h\char`\"{}}\newline
+Include dependency graph for publisher.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{publisher_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{publisher_8cpp_aa57d1b9c104d7e33ec970600a81e42e4}{pos\+\_\+v\+\_\+\+Callback}} (const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em a subscriber callback \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{publisher_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em the main function, that manages everything \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{publisher_8cpp_ad03773048a53823ad40f581d998dc34b}\label{publisher_8cpp_ad03773048a53823ad40f581d998dc34b}} 
+float \mbox{\hyperlink{publisher_8cpp_ad03773048a53823ad40f581d998dc34b}{posx}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for position along x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{publisher_8cpp_a43b49252713d5c09faf4af4ce59fdc12}\label{publisher_8cpp_a43b49252713d5c09faf4af4ce59fdc12}} 
+float \mbox{\hyperlink{publisher_8cpp_a43b49252713d5c09faf4af4ce59fdc12}{posy}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for position along y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{publisher_8cpp_a81574a53ca33ab2f60f6481c61e3da21}\label{publisher_8cpp_a81574a53ca33ab2f60f6481c61e3da21}} 
+float \mbox{\hyperlink{publisher_8cpp_a81574a53ca33ab2f60f6481c61e3da21}{vx}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for linear velocity along x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{publisher_8cpp_a2dc1a0fcac235a430dd8c493502e09e1}\label{publisher_8cpp_a2dc1a0fcac235a430dd8c493502e09e1}} 
+float \mbox{\hyperlink{publisher_8cpp_a2dc1a0fcac235a430dd8c493502e09e1}{vz}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for angular velocity along z. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}\label{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}} 
+ros\+::\+Publisher \mbox{\hyperlink{publisher_8cpp_a350594df3e8f6948c8462edfd41ce086}{pub}}
+\begin{DoxyCompactList}\small\item\em A variable for interact with the publisher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Publishing robot position and velocity. 
+
+\begin{DoxyAuthor}{Author}
+Simone Borelli 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+03/03/2023
+\end{DoxyDate}
+Subscribes to \+: ~\newline
+ /odom
+
+Publishes to \+: ~\newline
+ /info\+\_\+robot
+
+Service\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Description \+:
+
+This node publishes the position and velocity as a custom message, subscribing these values from the topic /odom 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{publisher_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{publisher_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{publisher.cpp@{publisher.cpp}!main@{main}}
+\index{main@{main}!publisher.cpp@{publisher.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+the main function, that manages everything 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & is the number of arguments, provided by argv \\
+\hline
+{\em argv} & containes the arguments, passed by comand line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number 0 as a convention of any main function in C++
+\end{DoxyReturn}
+The main function uses pos\+\_\+v\+\_\+\+Callback for subscribing position and velocity of the robot. In addition it publishes these values on the topic /info\+\_\+robot \mbox{\Hypertarget{publisher_8cpp_aa57d1b9c104d7e33ec970600a81e42e4}\label{publisher_8cpp_aa57d1b9c104d7e33ec970600a81e42e4}} 
+\index{publisher.cpp@{publisher.cpp}!pos\_v\_Callback@{pos\_v\_Callback}}
+\index{pos\_v\_Callback@{pos\_v\_Callback}!publisher.cpp@{publisher.cpp}}
+\doxysubsubsection{\texorpdfstring{pos\_v\_Callback()}{pos\_v\_Callback()}}
+{\footnotesize\ttfamily void pos\+\_\+v\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+a subscriber callback 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & define the type of message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing, because it is a void function
+\end{DoxyReturn}
+This callback subscribers position ( x and y) and velocity ( linear vel\+\_\+x and angular vel\+\_\+z) and store these variables into those of custom message Robot\+\_\+pv. Finally it publishes them 
