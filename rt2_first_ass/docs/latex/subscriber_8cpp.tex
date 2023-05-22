@@ -1,0 +1,232 @@
+\hypertarget{subscriber_8cpp}{}\doxysection{src/subscriber.cpp File Reference}
+\label{subscriber_8cpp}\index{src/subscriber.cpp@{src/subscriber.cpp}}
+
+
+Subscribing robot position and velocity.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}following\+\_\+goal/\+Robot\+\_\+pv.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$following\+\_\+goal/\+Planning\+Action\+Goal.\+h$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+Include dependency graph for subscriber.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{subscriber_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{subscriber_8cpp_adc1c29c644b7555a6563dd8206fcf9da}{pos\+\_\+v\+\_\+\+Callback}} (const following\+\_\+goal\+::\+Robot\+\_\+pv\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em a subscriber callback \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{subscriber_8cpp_ad3791df4ec299650fefde273856d8637}{pos\+\_\+v\+\_\+goal\+\_\+\+Callback}} (const following\+\_\+goal\+::\+Planning\+Action\+Goal\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em a subscriber callback \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{subscriber_8cpp_ab0a6734ed130e38984bbcb22aac9fc35}{current\+\_\+goal\+\_\+dist}} ()
+\begin{DoxyCompactList}\small\item\em function that computes distance from target \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{subscriber_8cpp_ac6f376c3645980cd81f1d9577c28f2f5}{average\+\_\+speed\+\_\+lin}} ()
+\begin{DoxyCompactList}\small\item\em function that computes average linear speed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{subscriber_8cpp_af9fd8f792a5fd42d0a2244b906dac7ad}{average\+\_\+speed\+\_\+ang}} ()
+\begin{DoxyCompactList}\small\item\em function that computes average angular speed \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{subscriber_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em the main function, that manages everything \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{subscriber_8cpp_aff8f8d26d98b5fbc633ff8945414def6}\label{subscriber_8cpp_aff8f8d26d98b5fbc633ff8945414def6}} 
+float \mbox{\hyperlink{subscriber_8cpp_aff8f8d26d98b5fbc633ff8945414def6}{current\+\_\+posx}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for current position of robot along x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a26028f24f80fa28d7344e1c37c0b537e}\label{subscriber_8cpp_a26028f24f80fa28d7344e1c37c0b537e}} 
+float \mbox{\hyperlink{subscriber_8cpp_a26028f24f80fa28d7344e1c37c0b537e}{current\+\_\+posy}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for current position of robot along y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a68d11ac88159f3a24443c06660f282ad}\label{subscriber_8cpp_a68d11ac88159f3a24443c06660f282ad}} 
+float \mbox{\hyperlink{subscriber_8cpp_a68d11ac88159f3a24443c06660f282ad}{goal\+\_\+posx}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for goal position of robot along x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_aabee660c5adf237302d99554ac4bf0ab}\label{subscriber_8cpp_aabee660c5adf237302d99554ac4bf0ab}} 
+float \mbox{\hyperlink{subscriber_8cpp_aabee660c5adf237302d99554ac4bf0ab}{goal\+\_\+posy}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for goal position of robot along y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a9d769bc42fd6d3dbaee7f28c296f7063}\label{subscriber_8cpp_a9d769bc42fd6d3dbaee7f28c296f7063}} 
+float \mbox{\hyperlink{subscriber_8cpp_a9d769bc42fd6d3dbaee7f28c296f7063}{dist\+\_\+togx}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for distance from the target along x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_ac2ce40864c677d0c48896ba0f5ed6206}\label{subscriber_8cpp_ac2ce40864c677d0c48896ba0f5ed6206}} 
+float \mbox{\hyperlink{subscriber_8cpp_ac2ce40864c677d0c48896ba0f5ed6206}{dist\+\_\+togy}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for distance from the target along y. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a81574a53ca33ab2f60f6481c61e3da21}\label{subscriber_8cpp_a81574a53ca33ab2f60f6481c61e3da21}} 
+float \mbox{\hyperlink{subscriber_8cpp_a81574a53ca33ab2f60f6481c61e3da21}{vx}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for linear velocity of robot along x. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a2dc1a0fcac235a430dd8c493502e09e1}\label{subscriber_8cpp_a2dc1a0fcac235a430dd8c493502e09e1}} 
+float \mbox{\hyperlink{subscriber_8cpp_a2dc1a0fcac235a430dd8c493502e09e1}{vz}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for angular velocity of robot along z. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_acfac47fc0f33dd8e053958124137d6a5}\label{subscriber_8cpp_acfac47fc0f33dd8e053958124137d6a5}} 
+float \mbox{\hyperlink{subscriber_8cpp_acfac47fc0f33dd8e053958124137d6a5}{aver\+\_\+speed\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for the average of linear velocities. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_acb5218f55a193461b34bfd533c1975d5}\label{subscriber_8cpp_acb5218f55a193461b34bfd533c1975d5}} 
+float \mbox{\hyperlink{subscriber_8cpp_acb5218f55a193461b34bfd533c1975d5}{aver\+\_\+speed\+\_\+z}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for the average of angular velocities. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_af47b51ca57add72ebc2c7dd7422d2dc3}\label{subscriber_8cpp_af47b51ca57add72ebc2c7dd7422d2dc3}} 
+float \mbox{\hyperlink{subscriber_8cpp_af47b51ca57add72ebc2c7dd7422d2dc3}{sum\+\_\+velx}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for the sum of linear velocities. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a384fbbe9afed79d564dbc2fd7f333f4c}\label{subscriber_8cpp_a384fbbe9afed79d564dbc2fd7f333f4c}} 
+float \mbox{\hyperlink{subscriber_8cpp_a384fbbe9afed79d564dbc2fd7f333f4c}{sum\+\_\+velz}}
+\begin{DoxyCompactList}\small\item\em A variable that stands for the sum of angular velocities. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_aa07defb2358cbca5f0884913719f327e}\label{subscriber_8cpp_aa07defb2358cbca5f0884913719f327e}} 
+int \mbox{\hyperlink{subscriber_8cpp_aa07defb2358cbca5f0884913719f327e}{count\+\_\+v\+\_\+lin}} =1
+\begin{DoxyCompactList}\small\item\em A variable for the total number of linear speeds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_ab9de89871afb036e557689ecaac888f4}\label{subscriber_8cpp_ab9de89871afb036e557689ecaac888f4}} 
+int \mbox{\hyperlink{subscriber_8cpp_ab9de89871afb036e557689ecaac888f4}{count\+\_\+v\+\_\+ang}} =1
+\begin{DoxyCompactList}\small\item\em A variable for the total number of angular speeds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a8275a2d22077028072526a74404248f1}\label{subscriber_8cpp_a8275a2d22077028072526a74404248f1}} 
+bool \mbox{\hyperlink{subscriber_8cpp_a8275a2d22077028072526a74404248f1}{initial\+\_\+linear}} =true
+\begin{DoxyCompactList}\small\item\em A variable for setting the initial linear speed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a113f18d4baadb5553138a4da4c11edcf}\label{subscriber_8cpp_a113f18d4baadb5553138a4da4c11edcf}} 
+bool \mbox{\hyperlink{subscriber_8cpp_a113f18d4baadb5553138a4da4c11edcf}{initial\+\_\+angular}} =true
+\begin{DoxyCompactList}\small\item\em A variable for setting the initial angular speed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{subscriber_8cpp_a4c45cdff103e6644a620ba5061509f22}\label{subscriber_8cpp_a4c45cdff103e6644a620ba5061509f22}} 
+double \mbox{\hyperlink{subscriber_8cpp_a4c45cdff103e6644a620ba5061509f22}{frequency}}
+\begin{DoxyCompactList}\small\item\em A variable for storing the frequency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Subscribing robot position and velocity. 
+
+\begin{DoxyAuthor}{Author}
+Simone Borelli 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+03/03/2023
+\end{DoxyDate}
+Subscribes to \+: ~\newline
+ /info\+\_\+robot ~\newline
+ /reaching\+\_\+goal/goal
+
+Publishes to \+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Service\+: ~\newline
+ \mbox{[}None\mbox{]}
+
+Parameters\+: ~\newline
+ frequency
+
+Description \+:
+
+This node subscribes position ( x and y) and velocity ( linea vel\+\_\+x and angular vel\+\_\+z) from the topic /info\+\_\+robot. Then it subscribes also the goal from the topic /reaching\+\_\+goal/goal and computes the distance from the target and the robot\textquotesingle{}s average speed. In addition it uses a parameter to set how fast the node publishes the information. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{subscriber_8cpp_af9fd8f792a5fd42d0a2244b906dac7ad}\label{subscriber_8cpp_af9fd8f792a5fd42d0a2244b906dac7ad}} 
+\index{subscriber.cpp@{subscriber.cpp}!average\_speed\_ang@{average\_speed\_ang}}
+\index{average\_speed\_ang@{average\_speed\_ang}!subscriber.cpp@{subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{average\_speed\_ang()}{average\_speed\_ang()}}
+{\footnotesize\ttfamily void average\+\_\+speed\+\_\+ang (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function that computes average angular speed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+None\mbox{]}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing, because it is a void function
+\end{DoxyReturn}
+This function computes the average angular speed as the sum of all angular speeds up to now, divided by the number of these speeds. At the end increments by one the counter of angular speed. \mbox{\Hypertarget{subscriber_8cpp_ac6f376c3645980cd81f1d9577c28f2f5}\label{subscriber_8cpp_ac6f376c3645980cd81f1d9577c28f2f5}} 
+\index{subscriber.cpp@{subscriber.cpp}!average\_speed\_lin@{average\_speed\_lin}}
+\index{average\_speed\_lin@{average\_speed\_lin}!subscriber.cpp@{subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{average\_speed\_lin()}{average\_speed\_lin()}}
+{\footnotesize\ttfamily void average\+\_\+speed\+\_\+lin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function that computes average linear speed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+None\mbox{]}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing, because it is a void function
+\end{DoxyReturn}
+This function computes the average linear speed as the sum of all linear speeds up to now, divided by the number of these speeds. At the end increments by one the counter of linear speed. \mbox{\Hypertarget{subscriber_8cpp_ab0a6734ed130e38984bbcb22aac9fc35}\label{subscriber_8cpp_ab0a6734ed130e38984bbcb22aac9fc35}} 
+\index{subscriber.cpp@{subscriber.cpp}!current\_goal\_dist@{current\_goal\_dist}}
+\index{current\_goal\_dist@{current\_goal\_dist}!subscriber.cpp@{subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{current\_goal\_dist()}{current\_goal\_dist()}}
+{\footnotesize\ttfamily void current\+\_\+goal\+\_\+dist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function that computes distance from target 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}\+None\mbox{]}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing, because it is a void function
+\end{DoxyReturn}
+This function computes the euclidian distance from the target and checks if the goal is reached or not for setting the initial linear and angular speeds. \mbox{\Hypertarget{subscriber_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{subscriber_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{subscriber.cpp@{subscriber.cpp}!main@{main}}
+\index{main@{main}!subscriber.cpp@{subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+the main function, that manages everything 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & is the number of arguments, provided by argv \\
+\hline
+{\em argv} & containes the arguments, passed by comand line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number 0 as a convention of any main function in C++
+\end{DoxyReturn}
+The main function gets the frequency, which is used to set the rate of how fast the node publishes the information, as a parameter server. It uses the callback pos\+\_\+v\+\_\+\+Callback for subscribing the current position x and y from the topic /info\+\_\+robot, and it uses the callback pos\+\_\+v\+\_\+goal\+\_\+\+Callback for subscribing the position of target. Finally it calls continuosly the functions which computes, respectively, the distance from the goal, the average linear and angular speed. \mbox{\Hypertarget{subscriber_8cpp_adc1c29c644b7555a6563dd8206fcf9da}\label{subscriber_8cpp_adc1c29c644b7555a6563dd8206fcf9da}} 
+\index{subscriber.cpp@{subscriber.cpp}!pos\_v\_Callback@{pos\_v\_Callback}}
+\index{pos\_v\_Callback@{pos\_v\_Callback}!subscriber.cpp@{subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{pos\_v\_Callback()}{pos\_v\_Callback()}}
+{\footnotesize\ttfamily void pos\+\_\+v\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{const following\+\_\+goal\+::\+Robot\+\_\+pv\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+a subscriber callback 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & define the type of message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing, because it is a void function
+\end{DoxyReturn}
+This callback subscribers position ( x and y) and velocity ( linear vel\+\_\+x and angular vel\+\_\+z) and stores them into another variables. \mbox{\Hypertarget{subscriber_8cpp_ad3791df4ec299650fefde273856d8637}\label{subscriber_8cpp_ad3791df4ec299650fefde273856d8637}} 
+\index{subscriber.cpp@{subscriber.cpp}!pos\_v\_goal\_Callback@{pos\_v\_goal\_Callback}}
+\index{pos\_v\_goal\_Callback@{pos\_v\_goal\_Callback}!subscriber.cpp@{subscriber.cpp}}
+\doxysubsubsection{\texorpdfstring{pos\_v\_goal\_Callback()}{pos\_v\_goal\_Callback()}}
+{\footnotesize\ttfamily void pos\+\_\+v\+\_\+goal\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{const following\+\_\+goal\+::\+Planning\+Action\+Goal\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+a subscriber callback 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & define the type of message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing, because it is a void function
+\end{DoxyReturn}
+This callback subscribers the target position ( x and y) and stores them into another variables. 
