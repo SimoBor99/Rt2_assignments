@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+		<param name="frequency" type="double" value="1.0"/>
+    <node pkg="following_goal" type="set_goal_node" name="set_goal_node" output="screen" launch-prefix="xterm -e"/>
+    <node pkg="following_goal" type="publisher_as2_node" name="publisher_as2_node"  output="screen" launch-prefix="xterm -e"/>
+    <node pkg="following_goal" type="subscriber_as2_node" name="subscriber_as2_node" output="screen" launch-prefix="xterm -e"/>
+    <node pkg="following_goal" type="count_goal_node" name="count_goal_node" output="screen" launch-prefix="xterm -e"/>
+</launch>
