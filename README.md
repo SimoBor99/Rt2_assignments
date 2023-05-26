@@ -1,3 +1,6 @@
+Student: Simone Borelli
+Student id: 4662264
+
 # First assignment
 The first assignment is simply a software documentation, in Doxygen, of the second one of rt1, which you can find more information on [my previous repository](https://github.com/SimoBor99/Rt1_assignment2). Hence you can find my [documentation](https://simobor99.github.io/Rt2_assignments/).
 
