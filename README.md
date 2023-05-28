@@ -11,3 +11,6 @@ The menu is made up by widgets and text boxes, while graph and bar chart are use
 
 For running it, you shoul click on the button **Run** on jupyter for each cell, otherwise you are not able to set a goal before seeing the plot. Once you have done it, you can set or delete a goal using the menu on the third last cell; the graph and the bar chart will be automaticaly updated.
 So this is my [jupyter notebook](https://github.com/SimoBor99/Rt2_assignments/blob/master/Assignment_2_rt2_Borelli_Simone.ipynb).
+
+# Third assignment
+[Statistical report](https://github.com/SimoBor99/Rt2_assignments/blob/master/Third_assignment_rt2.pdf).
